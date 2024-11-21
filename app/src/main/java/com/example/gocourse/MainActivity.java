@@ -1,66 +1,48 @@
 package com.example.gocourse;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.appcompat.widget.Toolbar;
-
-import androidx.appcompat.widget.Toolbar; // Make sure to import this
+import androidx.drawerlayout.widget.DrawerLayout;
+import android.view.MenuItem;
+import java.util.HashSet;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
-
-    private static final String TAG = "MainActivity";
     private NavController navController;
+    private DrawerLayout drawerLayout;
+    private AppBarConfiguration appBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         setContentView(R.layout.activity_main);
-        Log.d(TAG, "setContentView: activity_main layout loaded.");
 
-        // Set up the Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Log.d(TAG, "Toolbar set as ActionBar.");
 
-        // Obtain NavController via NavHostFragment
+        drawerLayout = findViewById(R.id.drawer_layout);
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.nav_host_fragment);
+        navController = navHostFragment.getNavController();
 
-        if (navHostFragment != null) {
-            navController = navHostFragment.getNavController();
-            Log.d(TAG, "NavController obtained from NavHostFragment: " + navController);
-        } else {
-            Log.e(TAG, "NavHostFragment is null!");
-        }
+        Set<Integer> topLevelDestinations = new HashSet<>();
+        topLevelDestinations.add(R.id.userFragment);
+        
+        appBarConfiguration = new AppBarConfiguration.Builder(topLevelDestinations)
+                .setOpenableLayout(drawerLayout)
+                .build();
 
-        if (navController != null) {
-            // Set up AppBarConfiguration
-            AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-            Log.d(TAG, "AppBarConfiguration set with nav graph.");
-
-            // Set up ActionBar with NavController
-            NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-            Log.d(TAG, "ActionBar setup with NavController.");
-        }
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
     }
 
     @Override
     public boolean onSupportNavigateUp() {
-        Log.d(TAG, "onSupportNavigateUp called.");
-        return navController.navigateUp() || super.onSupportNavigateUp();
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
+                || super.onSupportNavigateUp();
     }
 }

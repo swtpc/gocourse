@@ -1,39 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_scan"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- 相机预览 -->
     <androidx.camera.view.PreviewView
         android:id="@+id/previewView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!-- 提示信息 -->
-    <TextView
-        android:id="@+id/textView_hint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="请对准课程表进行拍摄"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:layout_gravity="top|center_horizontal"
-        android:layout_marginTop="30dp"
-        tools:ignore="HardcodedText" />
-
-    <!-- 拍照按钮 -->
     <ImageButton
         android:id="@+id/imageButton_capture"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/ic_capture"
-        android:background="@null"
-        android:contentDescription="拍照"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="40dp"
-        tools:ignore="HardcodedText" />
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="32dp"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/ic_menu_camera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

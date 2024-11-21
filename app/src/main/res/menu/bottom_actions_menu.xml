@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_scan"
+        android:title="扫描"/>
+    <item
+        android:id="@+id/action_new_course"
+        android:title="新建课程"/>
+    <item
+        android:id="@+id/action_new_schedule"
+        android:title="新建课表"/>
+</menu> 
