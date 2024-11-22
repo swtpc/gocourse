@@ -70,4 +70,8 @@ dependencies {
     // ViewModel
     implementation(libs.lifecycle.viewmodel)
     implementation(libs.lifecycle.livedata)
+
+    implementation("androidx.fragment:fragment:1.6.2")
+    // 如果使用Kotlin，还需要添加
+    implementation("androidx.fragment:fragment-ktx:1.6.2")
 }

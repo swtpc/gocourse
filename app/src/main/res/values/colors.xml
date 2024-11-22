@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#2196F3</color>
-    <color name="primary_light">#64B5F6</color>
-    <color name="primary_dark">#1976D2</color>
-    <color name="accent">#FF4081</color>
-    <color name="primary_text">#212121</color>
-    <color name="secondary_text">#757575</color>
-    <color name="icons">#FFFFFF</color>
-    <color name="divider">#BDBDBD</color>
-    <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
+    <!-- Material Design 3 颜色 -->
+    <color name="md_theme_primary">#006C4C</color>
+    <color name="md_theme_onPrimary">#FFFFFF</color>
+    <color name="md_theme_primaryContainer">#89F8C7</color>
+    <color name="md_theme_onPrimaryContainer">#002115</color>
+    
+    <color name="md_theme_secondary">#4B635A</color>
+    <color name="md_theme_onSecondary">#FFFFFF</color>
+    <color name="md_theme_secondaryContainer">#CDE9DD</color>
+    <color name="md_theme_onSecondaryContainer">#082018</color>
+    
+    <color name="md_theme_error">#BA1A1A</color>
+    <color name="md_theme_errorContainer">#FFDAD6</color>
+    <color name="md_theme_onError">#FFFFFF</color>
+    <color name="md_theme_onErrorContainer">#410002</color>
+    
+    <color name="md_theme_background">#FBFDF9</color>
+    <color name="md_theme_onBackground">#191C1B</color>
+    <color name="md_theme_surface">#FBFDF9</color>
+    <color name="md_theme_onSurface">#191C1B</color>
+    
+    <!-- 状态栏和导航栏颜色 -->
+    <color name="md_theme_statusBarColor">@android:color/transparent</color>
+    <color name="md_theme_navigationBarColor">@android:color/transparent</color>
+    
+    <!-- Material 3 动态颜色 - 将由系统自动生成 -->
+    <color name="seed">#006A6A</color>
+
+    <!-- 固定颜色 -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- 状态颜色 -->
+    <color name="error">#B3261E</color>
+    <color name="success">#386A20</color>
+    <color name="warning">#7D5700</color>
+    
+    <!-- 底部导航栏颜色选择器 -->
+    <color name="nav_item_color_selected">?attr/colorPrimary</color>
+    <color name="nav_item_color_unselected">?attr/colorOnSurfaceVariant</color>
 </resources>

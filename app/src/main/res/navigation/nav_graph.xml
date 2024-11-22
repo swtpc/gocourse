@@ -7,44 +7,28 @@
     <fragment
         android:id="@+id/userFragment"
         android:name="com.example.gocourse.ui.fragments.UserFragment"
-        android:label="用户">
+        android:label="课程表">
         <action
             android:id="@+id/action_userFragment_to_scanFragment"
             app:destination="@id/scanFragment" />
         <action
-            android:id="@+id/action_userFragment_to_dateFragment"
-            app:destination="@id/dateFragment" />
-        <action
             android:id="@+id/action_userFragment_to_newCourseFragment"
             app:destination="@id/newCourseFragment" />
-        <action
-            android:id="@+id/action_userFragment_to_membershipFragment"
-            app:destination="@id/membershipFragment" />
     </fragment>
-
-    <fragment
-        android:id="@+id/scanFragment"
-        android:name="com.example.gocourse.ui.fragments.ScanFragment"
-        android:label="扫描" />
-
-    <fragment
-        android:id="@+id/dateFragment"
-        android:name="com.example.gocourse.ui.fragments.DateFragment"
-        android:label="日期" />
 
     <fragment
         android:id="@+id/membershipFragment"
         android:name="com.example.gocourse.ui.fragments.MembershipFragment"
-        android:label="会员"/>
+        android:label="会员中心" />
+
+    <fragment
+        android:id="@+id/scanFragment"
+        android:name="com.example.gocourse.ui.fragments.ScanFragment"
+        android:label="扫描课表" />
 
     <fragment
         android:id="@+id/newCourseFragment"
         android:name="com.example.gocourse.ui.fragments.NewCourseFragment"
-        android:label="新建课程"/>
-
-    <fragment
-        android:id="@+id/newScheduleFragment"
-        android:name="com.example.gocourse.ui.fragments.NewScheduleFragment"
-        android:label="新建课表"/>
+        android:label="新建课程" />
 
 </navigation>
